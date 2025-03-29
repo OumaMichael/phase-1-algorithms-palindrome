@@ -1,21 +1,15 @@
-const chai = require("chai");
-global.expect = chai.expect;
-const isPalindrome = require("../index");
+const isPalindrome = require("./index");
 
-describe("isPalindrome", () => {
-  it("returns true for 'abba'", () => {
-    expect(isPalindrome("abba")).to.be.true;
-  });
-  it("returns true for 'racecar'", () => {
-    expect(isPalindrome("racecar")).to.be.true;
-  });
-  it("returns true for 'a'", () => {
-    expect(isPalindrome("a")).to.be.true;
-  });
-  it("returns false for 'robot'", () => {
-    expect(isPalindrome("robot")).to.be.false;
-  });
-  it("returns false for 'ab'", () => {
-    expect(isPalindrome("ab")).to.be.false;
-  });
+test("returns true for palindromes", () => {
+    expect(isPalindrome("madam")).toBe(true);
+    expect(isPalindrome("racecar")).toBe(true);
+    expect(isPalindrome("level")).toBe(true);
+    expect(isPalindrome("noon")).toBe(true);
+});
+
+test("returns false for non-palindromes", () => {
+    expect(isPalindrome("robot")).toBe(false);
+    expect(isPalindrome("hello")).toBe(false);
+    expect(isPalindrome("world")).toBe(false);
+    expect(isPalindrome("javascript")).toBe(false);
 });
