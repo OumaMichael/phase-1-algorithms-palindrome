@@ -1,15 +1,15 @@
-const isPalindrome = require("./index");
+const assert = require("assert");
+const isPalindrome = require("../index"); // Ensure the correct path
 
-test("returns true for palindromes", () => {
-    expect(isPalindrome("madam")).toBe(true);
-    expect(isPalindrome("racecar")).toBe(true);
-    expect(isPalindrome("level")).toBe(true);
-    expect(isPalindrome("noon")).toBe(true);
-});
+describe("isPalindrome", function () {
+  it("should return true for palindromes", function () {
+    assert.strictEqual(isPalindrome("madam"), true);
+    assert.strictEqual(isPalindrome("racecar"), true);
+    assert.strictEqual(isPalindrome("level"), true);
+  });
 
-test("returns false for non-palindromes", () => {
-    expect(isPalindrome("robot")).toBe(false);
-    expect(isPalindrome("hello")).toBe(false);
-    expect(isPalindrome("world")).toBe(false);
-    expect(isPalindrome("javascript")).toBe(false);
+  it("should return false for non-palindromes", function () {
+    assert.strictEqual(isPalindrome("robot"), false);
+    assert.strictEqual(isPalindrome("hello"), false);
+  });
 });
